@@ -5,8 +5,20 @@ import bodyParser from 'body-parser';
 import logger from 'morgan';
 import { resolve } from 'path';
 import apiRoutes from './api';
+import webpack from 'webpack';
+import config from '../webpack.config';
 
-module.exports = express()
+const compiler = webpack(config);
+
+const app = express();
+
+app.use(require('webpack-dev-middleware')(compiler, {
+  noInfo: true, publicPath: config.output.publicPath,
+}));
+
+app.use(require('webpack-hot-middleware')(compiler));
+
+module.exports = app
   .use(bodyParser.urlencoded({ extended: true }))
   .use(bodyParser.json())
   .use(logger('tiny'))
