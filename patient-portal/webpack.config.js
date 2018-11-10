@@ -20,8 +20,10 @@ module.exports = {
       template: './client/index.html',
       path: path.resolve(__dirname, 'public'),
       filename: 'index.html',
+      watch: true,
     }),
     new ExtractTextPlugin({ filename: './stylesheets/style.css' }),
+    new webpack.HotModuleReplacementPlugin(),
   ],
   module: {
     rules: [
