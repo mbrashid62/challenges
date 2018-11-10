@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { withRouter } from 'react-router-dom';
 import Button from 'material-ui/Button';
 import TextField from 'material-ui/TextField';
 import { withStyles } from 'material-ui/styles';
 
-import { login } from '../reducers/auth';
+import * as authActions from '../actions/auth';
 
 const styles = {
   textField: {
@@ -19,22 +21,47 @@ const styles = {
   },
 };
 
+const INPUT_FIELD_TYPES = {
+  EMAIL: 'email',
+  PASSWORD: 'password',
+};
+
 class Login extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
       email: '',
       password: '',
+      enableLogin: false,
     };
-    this.onInputChange = this.onInputChange.bind(this);
+    this.onPasswordChange = this.onPasswordChange.bind(this);
   }
 
-  onInputChange(type, value) {
-    this.setState({ [type]: value });
+  componentDidUpdate(prevProps) {
+    if (prevProps.loginStatus === 'PENDING' && this.props.loginStatus === 'SUCCESS') {
+      this.props.history.push('/dashboard');
+    }
   }
+
+
+  onPasswordChange(type, value) {
+    this.setState({
+      [type]: value,
+    });
+  }
+
+  onLoginChange = (type, value) => {
+    this.setState({
+      [type]: value,
+      enableLogin: this.isValidEmail(value),
+    });
+  };
+
+  isValidEmail = (email = '') => email.includes('@');
 
   render() {
-    const { attemptLogin, classes } = this.props;
+    const { loginActions, classes } = this.props;
     return (
       <div className="login-container">
         <div>
@@ -47,7 +74,7 @@ class Login extends Component {
               placeholder="Email address"
               value={this.state.email}
               onChange={(evt) => {
-                this.onInputChange('email', evt.target.value);
+                this.onLoginChange(INPUT_FIELD_TYPES.EMAIL, evt.target.value);
               }}
               className={classes.textField}
               fullWidth
@@ -60,7 +87,7 @@ class Login extends Component {
               placeholder="Password"
               value={this.state.password}
               onChange={(evt) => {
-                this.onInputChange('password', evt.target.value);
+                this.onPasswordChange(INPUT_FIELD_TYPES.PASSWORD, evt.target.value);
               }}
               className={classes.textField}
               fullWidth
@@ -70,11 +97,12 @@ class Login extends Component {
             <Button
               onClick={(evt) => {
                 evt.preventDefault();
-                attemptLogin(this.state.email, this.state.password);
+                loginActions.dispatchLoginAttempt(this.state.email, this.state.password);
               }}
               variant="raised"
               className={classes.button}
               color="primary"
+              disabled={!this.state.enableLogin}
               fullWidth
             >
               Log in
@@ -86,15 +114,21 @@ class Login extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    loginStatus: state.user.status,
+  };
+};
+
 const mapDispatchToProps = (dispatch) => ({
-  attemptLogin: (email, password) => {
-    dispatch(login(email, password));
-  },
+  loginActions: bindActionCreators(authActions, dispatch),
 });
 
 Login.propTypes = {
-  attemptLogin: PropTypes.func,
+  loginActions: PropTypes.object,
+  loginStatus: PropTypes.string,
+  history: PropTypes.object,
   classes: PropTypes.object.isRequired,
 };
 
-export default connect(() => ({}), mapDispatchToProps)(withStyles(styles)(Login));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(withStyles(styles)(Login)));
