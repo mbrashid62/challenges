@@ -19,7 +19,7 @@ const theme = createMuiTheme({
 import store from './store';
 
 import Login from './containers/Login';
-import DoctorHome from './containers/DoctorHome';
+import UserHome from './containers/UserHome';
 import PatientHome from './containers/PatientHome';
 import Patient from './containers/DoctorPatient';
 import Home from './components/Home';
@@ -38,7 +38,7 @@ render(
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/login" component={Login} />
-            <Route path="/dashboard" component={DoctorHome} />
+            <Route path="/dashboard" component={UserHome} />
             <Route path="/patient/:id" component={Patient} />
             <Route path="/account" component={PatientHome} />
             <Route path="/request-appointment" component={NewApptRequest} />
