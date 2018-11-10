@@ -24,24 +24,23 @@ const styles = {
 const PatientList = ({ patients, history, classes }) => (
   <Paper className={classes.container}>
     <h3>Patients</h3>
-    {
-      patients.map((patient) => (
-        <div
-          key={patient.id}
-          onClick={() => {
-            history.push(`/patient/${patient.id}`);
-          }}
-          onKeyPress={() => {
-            history.push(`/patient/${patient.id}`);
-          }}
-          className={classes.patientRow}
-        >
-          <Divider />
-          <div className={classes.patientInfo}>
-            {patient.name}
-          </div>
-        </div>))
-    }
+    {patients.map((patient) => (
+      <div
+        key={patient.user_id}
+        onClick={() => {
+          history.push(`/patient/${patient.user_id}`);
+        }}
+        onKeyPress={() => {
+          history.push(`/patient/${patient.user_id}`);
+        }}
+        className={classes.patientRow}
+      >
+        <Divider />
+        <div className={classes.patientInfo}>
+          {patient.firstName} {patient.lastName}
+        </div>
+      </div>
+    ))}
   </Paper>
 );
 
