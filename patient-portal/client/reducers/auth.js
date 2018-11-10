@@ -1,30 +1,41 @@
-import axios from 'axios';
+import { AUTH_ACTION_TYPES } from '../actions/auth';
 
-const AUTHENTICATED = 'AUTHENTICATED';
+const API_STATUS = {
+  IDLE: 'IDLE',
+  PENDING: 'PENDING',
+  SUCCESS: 'SUCCESS',
+  FAILURE: 'FAILURE',
+};
 
-export const authenticated = (user) => ({
-  type: AUTHENTICATED, user,
-});
+const AUTH_STATE = {
+  user: {},
+  status: API_STATUS.IDLE,
+};
 
-export const login = (email, password) =>
-  (dispatch) =>
-    axios.post(
-      '/api/auth/login',
-      { email, password },
-    )
-      .then((res) => dispatch(authenticated(res.data)))
-      .catch(() => dispatch(authenticated(null)));
-
-const authReducer = (state = null, action) => {
-  let newState;
+const authReducer = (state = AUTH_STATE, action) => {
   switch (action.type) {
-    case AUTHENTICATED:
-      newState = action.user;
-      break;
+    case AUTH_ACTION_TYPES.LOGIN.ATTEMPT:
+      return {
+        ...state,
+        status: API_STATUS.PENDING,
+      };
+    case AUTH_ACTION_TYPES.LOGIN.SUCCESS: {
+      return {
+        ...state,
+        user: action.payload,
+        status: API_STATUS.SUCCESS,
+      };
+    }
+    case AUTH_ACTION_TYPES.LOGIN.FAILURE: {
+      return {
+        ...state,
+        user: {},
+        status: API_STATUS.LOGIN.FAILURE,
+      };
+    }
     default:
       return state;
   }
-  return newState;
 };
 
 export default authReducer;

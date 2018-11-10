@@ -44,6 +44,7 @@ const DoctorHome = ({ classes }) => (
               placeholder="Search patients"
               className={classes.search}
               inputProps={{ style: { fontSize: 12 } }}
+              // onChange={this}
             />
           </Card>
           <PatientList patients={patients} />
