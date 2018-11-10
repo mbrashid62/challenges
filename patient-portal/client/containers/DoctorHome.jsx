@@ -8,8 +8,6 @@ import { withStyles } from 'material-ui/styles';
 
 import PatientList from '../components/PatientList';
 
-// import { patients } from '../dummyData';
-
 const styles = {
   welcomeMessage: {
     color: 'black',
@@ -33,8 +31,7 @@ const styles = {
 };
 
 
-class DoctorHome extends React.Component {
-
+class DoctorHome extends Component {
   static displayName = 'patient-portal/client/containers/DoctorHome';
 
   static propTypes = {
@@ -44,7 +41,6 @@ class DoctorHome extends React.Component {
 
   state = {
     patients: [],
-    patientFetchError: {},
   };
 
   componentDidMount() {
@@ -62,10 +58,9 @@ class DoctorHome extends React.Component {
           patients: response.data,
         });
       })
-      .catch((err) => {
+      .catch(() => {
         this.setState({
           patients: [],
-          patientFetchError: err,
         });
       });
 
