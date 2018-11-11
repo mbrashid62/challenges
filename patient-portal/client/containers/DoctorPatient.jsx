@@ -8,7 +8,7 @@ import { patient, pendingAppts, pastAppts, files } from '../dummyData';
 
 class Patient extends React.Component {
   componentDidMount() {
-    console.log('patient compoent mounted');
+    console.log('patient component mounted');
   }
 
   render() {

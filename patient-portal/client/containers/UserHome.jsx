@@ -5,6 +5,9 @@ import _ from 'lodash';
 
 import Protected from './Protected';
 import DoctorHome from './DoctorHome';
+import PatientHome from './PatientHome';
+
+import { USER_ROLES } from '../constants/roles';
 
 class UserHome extends React.Component {
   static displayName = 'patient-portal/client/containers/UserHome';
@@ -27,10 +30,12 @@ class UserHome extends React.Component {
 
   render() {
     const { activeUser } = this.state;
-    const isDoctor = _.get(activeUser, 'role', false) === 'doctor';
+    const isDoctor = _.get(activeUser, 'role', false) === USER_ROLES.DOCTOR;
+    const isPatient = _.get(activeUser, 'role', false) === USER_ROLES.PATIENT;
     return (
       <Protected>
         {isDoctor && (<DoctorHome doctor={activeUser} />)}
+        {isPatient && (<PatientHome patient={activeUser} />)}
       </Protected>
     );
   }
