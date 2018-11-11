@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import DoctorsAppointment from '../components/appointments/DoctorsAppointment';
 import PatientAppointments from '../components/appointments/PatientAppointments';
 
+import { USER_ROLES } from '../constants/roles';
+
 // I chose to create two patient components here in order to take a more compositional approach.
 // If I were to discern between doctor/patient in one component, I would be able to share much of the overlapping logic.
 // However, this would mean both doctor/patient component types would be heavily coupled together. This would introduce bugs and scaling difficulties.
@@ -13,9 +15,9 @@ import PatientAppointments from '../components/appointments/PatientAppointments'
 const Appointments = ({ appointments, user }) => (
   <div className="appointment-wrapper">
     {appointments.map((appt) => (
-      <div>
-        {user.role === 'doctor' && <DoctorsAppointment key={appt.id} appt={appt} />}
-        {user.role === 'patient' && <PatientAppointments key={appt.id} appt={appt} /> }
+      <div key={appt.id}>
+        {user.role === USER_ROLES.DOCTOR && <DoctorsAppointment appt={appt} />}
+        {user.role === USER_ROLES.PATIENT && <PatientAppointments appt={appt} /> }
       </div>
     ))}
   </div>

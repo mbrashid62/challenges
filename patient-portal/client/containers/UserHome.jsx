@@ -7,10 +7,7 @@ import Protected from './Protected';
 import DoctorHome from './DoctorHome';
 import PatientHome from './PatientHome';
 
-const USER_ROLES = {
-  DOCTOR: 'doctor',
-  PATIENT: 'patient',
-};
+import { USER_ROLES } from '../constants/roles';
 
 class UserHome extends React.Component {
   static displayName = 'patient-portal/client/containers/UserHome';
