@@ -41,7 +41,13 @@ class UserHome extends React.Component {
   }
 }
 UserHome.propTypes = {
-  user: PropTypes.object.isRequired,
+  user: PropTypes.shape({
+    id: PropTypes.string,
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
+    email: PropTypes.string,
+    role: PropTypes.string,
+  }).isRequired,
 };
 
 UserHome.displayName = 'patient-portal/client/containers/UserHome';
