@@ -30,7 +30,20 @@ const authReducer = (state = AUTH_STATE, action) => {
       return {
         ...state,
         user: {},
-        status: API_STATUS.LOGIN.FAILURE,
+        status: API_STATUS.FAILURE,
+      };
+    }
+    case AUTH_ACTION_TYPES.SET_USER: {
+      return {
+        ...state,
+        user: action.payload,
+      };
+    }
+    case AUTH_ACTION_TYPES.LOGOUT: {
+      return {
+        ...state,
+        status: API_STATUS.IDLE,
+        user: {},
       };
     }
     default:

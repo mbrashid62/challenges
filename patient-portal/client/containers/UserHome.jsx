@@ -1,11 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import _ from 'lodash';
+
+import Protected from './Protected';
 import DoctorHome from './DoctorHome';
 import PatientHome from './PatientHome';
 
-const UserHome = ({ user }) => user.role === 'doctor' ? <DoctorHome doctor={user} /> : <PatientHome user={user} />;
+// Todo: update conditional logic here...
+// const UserHome = ({ user }) => ;
 
+class UserHome extends React.Component {
+  static displayName = 'patient-portal/client/containers/UserHome';
+
+  state = {
+    activeUser: {},
+  };
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.user !== this.props.user) {
+      this.updateActiveUserState(this.props.user);
+    }
+  }
+
+  updateActiveUserState = (user) => {
+    this.setState({
+      activeUser: user,
+    });
+  };
+
+  render() {
+    const { activeUser } = this.state;
+    const isDoctor = _.get(activeUser, 'role', false) === 'doctor';
+    return (
+      <Protected>
+        {isDoctor && (<DoctorHome doctor={activeUser} />)}
+      </Protected>
+    );
+  }
+}
 UserHome.propTypes = {
   user: PropTypes.object.isRequired,
 };
