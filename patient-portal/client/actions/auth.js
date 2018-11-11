@@ -6,6 +6,8 @@ export const AUTH_ACTION_TYPES = {
     SUCCESS: 'LOGIN_SUCCESS',
     FAILURE: 'LOGIN_FAILURE',
   },
+  LOGOUT: 'LOGOUT',
+  SET_USER: 'SET_USER',
   // Todo: add registration types below
 };
 
@@ -35,5 +37,18 @@ export function dispatchLoginAttempt(email, password) {
           payload: { ...err },
         })
       ));
+  };
+}
+
+export function dispatchSetUser(user) {
+  return {
+    type: AUTH_ACTION_TYPES.SET_USER,
+    payload: user,
+  };
+}
+
+export function dispatchLogout() {
+  return {
+    type: AUTH_ACTION_TYPES.LOGOUT,
   };
 }
