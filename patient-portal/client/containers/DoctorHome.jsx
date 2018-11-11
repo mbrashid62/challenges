@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
 import axios from 'axios';
 import TextField from 'material-ui/TextField';
 import Icon from 'material-ui/Icon';
@@ -41,11 +42,18 @@ class DoctorHome extends Component {
 
   state = {
     patients: [],
+    searchText: '',
   };
 
   componentDidMount() {
     this.getPatientsById(this.props.doctor.id);
   }
+
+  onSearchChange = (e) => {
+    this.setState({
+      searchText: e.target.value.toLowerCase(),
+    });
+  };
 
   getPatientsById = (doctorId = '') => {
     axios.get('api/patients', {
@@ -68,10 +76,30 @@ class DoctorHome extends Component {
       patients: [],
     });
   };
+  // This assumes a doctor's patient list is going to be relatively small at first.
+  // That said, it is more efficient to perform filtering in the browser to avoid network hops.
+  // As patient numbers increase over time, filtering should be handled on the backend.
+  // This would require us to hit an endpoint and throttle requests here.
+  // For now, this will suffice.
+  getFilteredPatients = (patients) => {
+    if (this.state.searchText !== '') {
+      return _.filter(
+        patients,
+        (p) => p.firstName.toLowerCase().includes(this.state.searchText) || p.lastName.toLowerCase().includes(this.state.searchText),
+      );
+    }
+
+    return patients;
+  };
 
   render() {
-    const { classes, doctor } = this.props;
+    const {
+      classes,
+      doctor,
+    } = this.props;
+
     const { patients } = this.state;
+
     return (
       <div className="container">
         <h2 className={classes.welcomeMessage}>Welcome back, {doctor.firstName}.</h2>
@@ -85,9 +113,10 @@ class DoctorHome extends Component {
                   placeholder="Search patients"
                   className={classes.search}
                   inputProps={{ style: { fontSize: 12 } }}
+                  onChange={this.onSearchChange}
                 />
               </Card>
-              <PatientList patients={this.state.patients} />
+              <PatientList patients={this.getFilteredPatients(this.state.patients)} />
             </div>
             : <div>{'You don\'t have any patients.'}</div>
           }
