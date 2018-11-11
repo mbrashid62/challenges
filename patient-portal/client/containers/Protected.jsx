@@ -8,8 +8,8 @@ import Cookies from 'js-cookie';
 
 import * as authActions from '../actions/auth';
 
-export class Auth extends Component {
-  static displayName = 'patient-portal/client/containers/Auth';
+export class Protected extends Component {
+  static displayName = 'patient-portal/client/containers/Protected';
 
   static propTypes = {
     children: PropTypes.array.isRequired,
@@ -62,4 +62,4 @@ const mapDispatchToProps = (dispatch) => ({
   loginActions: bindActionCreators(authActions, dispatch),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Auth));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Protected));

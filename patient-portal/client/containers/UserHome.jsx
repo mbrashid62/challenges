@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 
-import Auth from './Auth';
+import Protected from './Protected';
 import DoctorHome from './DoctorHome';
 import PatientHome from './PatientHome';
 
@@ -33,9 +33,9 @@ class UserHome extends React.Component {
     const { activeUser } = this.state;
     const isDoctor = _.get(activeUser, 'role', false) === 'doctor';
     return (
-      <Auth>
+      <Protected>
         {isDoctor && (<DoctorHome doctor={activeUser} />)}
-      </Auth>
+      </Protected>
     );
   }
 }

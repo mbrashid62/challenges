@@ -6,7 +6,6 @@ import Icon from 'material-ui/Icon';
 import Card from 'material-ui/Card';
 import { withStyles } from 'material-ui/styles';
 
-import Auth from './Auth';
 import PatientList from '../components/PatientList';
 
 const styles = {
@@ -74,29 +73,26 @@ class DoctorHome extends Component {
     const { classes, doctor } = this.props;
     const { patients } = this.state;
     return (
-      <Auth>
-        <div className="container">
-          <h2 className={classes.welcomeMessage}>Welcome back, {doctor.firstName}.</h2>
-          <div className={classes.patients}>
-            {patients.length ?
-              <div>
-                <Card className={classes.searchWrapper}>
-                  <Icon className={classes.searchIcon}>search</Icon>
-                  <TextField
-                    name="search"
-                    placeholder="Search patients"
-                    className={classes.search}
-                    inputProps={{ style: { fontSize: 12 } }}
-                    // onChange={this}
-                  />
-                </Card>
-                <PatientList patients={this.state.patients} />
-              </div>
-              : <div>{'You don\'t have any patients.'}</div>
-            }
-          </div>
+      <div className="container">
+        <h2 className={classes.welcomeMessage}>Welcome back, {doctor.firstName}.</h2>
+        <div className={classes.patients}>
+          {patients.length ?
+            <div>
+              <Card className={classes.searchWrapper}>
+                <Icon className={classes.searchIcon}>search</Icon>
+                <TextField
+                  name="search"
+                  placeholder="Search patients"
+                  className={classes.search}
+                  inputProps={{ style: { fontSize: 12 } }}
+                />
+              </Card>
+              <PatientList patients={this.state.patients} />
+            </div>
+            : <div>{'You don\'t have any patients.'}</div>
+          }
         </div>
-      </Auth>
+      </div>
     );
   }
 }

@@ -8,7 +8,7 @@ import TextField from 'material-ui/TextField';
 import { withStyles } from 'material-ui/styles';
 
 import * as authActions from '../actions/auth';
-import Auth from './Auth';
+import Protected from './Protected';
 
 const styles = {
   textField: {
@@ -62,7 +62,7 @@ class Login extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <Auth>
+      <Protected>
         <div className="login-container">
           <div>
             <h2 className="login-header">Log in</h2>
@@ -107,7 +107,7 @@ class Login extends Component {
             </div>
           </form>
         </div>
-      </Auth>
+      </Protected>
     );
   }
 }
