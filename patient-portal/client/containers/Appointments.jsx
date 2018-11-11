@@ -5,9 +5,7 @@ import Appointment from '../components/Appointment';
 
 const Appointments = ({ appointments }) => (
   <div>
-    {
-      appointments.map((appt) => <Appointment key={appt.id} appt={appt} />)
-    }
+    {appointments.map((appt) => <Appointment key={appt.id} appt={appt} />)}
   </div>
 );
 
