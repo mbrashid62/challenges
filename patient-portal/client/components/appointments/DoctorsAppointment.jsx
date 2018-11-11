@@ -9,33 +9,13 @@ import Divider from 'material-ui/Divider';
 import TextField from 'material-ui/TextField';
 import { withStyles } from 'material-ui/styles';
 
-import { getIsChildOfParent } from '../utils/dom';
+import { getIsChildOfParent } from '../../utils/dom';
 
-const styles = {
-  card: {
-    marginBottom: 15,
-    width: 400,
-  },
-  marginBottom: {
-    marginBottom: 15,
-  },
-  content: {
-    display: 'flex',
-    justifyContent: 'space-between',
-  },
-  header: {
-    fontSize: 13,
-    fontWeight: 600,
-    marginBottom: 10,
-    marginTop: 10,
-  },
-  action: {
-    fontSize: 12,
-    padding: 10,
-  },
-};
+import { styles } from './styles/apptStyles';
 
-class Appointment extends Component {
+class DoctorsAppointment extends Component {
+  static displayName = 'patient-portal/client/components/DoctorsAppointment';
+
   constructor(props) {
     super(props);
     this.state = {
@@ -108,7 +88,11 @@ class Appointment extends Component {
   }
 
   render() {
-    const { appt, classes } = this.props;
+    const {
+      appt,
+      classes,
+    } = this.props;
+
     return (
       <Card id={appt.datetime} key={appt.datetime} className={classes.card} onClick={(e) => this.onCardClick(e, appt)}>
         <CardContent>
@@ -165,7 +149,7 @@ class Appointment extends Component {
   }
 }
 
-Appointment.propTypes = {
+DoctorsAppointment.propTypes = {
   appt: PropTypes.shape({
     id: PropTypes.number,
     status: PropTypes.string,
@@ -175,4 +159,4 @@ Appointment.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Appointment);
+export default withStyles(styles)(DoctorsAppointment);
