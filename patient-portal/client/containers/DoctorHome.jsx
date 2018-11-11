@@ -7,6 +7,7 @@ import Icon from 'material-ui/Icon';
 import Card from 'material-ui/Card';
 import { withStyles } from 'material-ui/styles';
 
+// import PatientsApi from '../../../patient-portal/server/api/patients';
 import PatientList from '../components/PatientList';
 
 const styles = {
@@ -56,9 +57,9 @@ class DoctorHome extends Component {
   };
 
   getPatientsById = (doctorId = '') => {
-    axios.get('api/patients', {
+    axios.get('api/patients', { 
       params: {
-        id: doctorId,
+        doctor_id: doctorId,
       },
     })
       .then((response) => {
@@ -71,10 +72,6 @@ class DoctorHome extends Component {
           patients: [],
         });
       });
-
-    this.setState({
-      patients: [],
-    });
   };
   // This assumes a doctor's patient list is going to be relatively small at first.
   // That said, it is more efficient to perform filtering in the browser to avoid network hops.
