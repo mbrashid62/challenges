@@ -18,10 +18,34 @@ function hydratePatientData(patient) {
   };
 }
 
+/**
+ * Filters out all patients that do not have an appointment record with the given doctor
+ * @param patients
+ * @param doctorId
+ * @return {Array}
+ */
+function getOnlyDoctorsPatients(patients, doctorId) {
+  const result = [];
+  patients.forEach((p) => {
+    const { appointments } = p;
+    for (let i = 0; i < appointments.length; i++) {
+      if (appointments[i].doctor_id === doctorId) {
+        result.push(p);
+        break;
+      }
+    }
+  });
+  return result;
+}
 export default Router()
   .get('/', (req, res) => {
     const allPatients = Api.Patient.get();
-    res.status(200).send(allPatients.map(hydratePatientData));
+    const allHydratedPatients = allPatients.map(hydratePatientData);
+    if (req.query.doctor_id) {
+      res.status(200).send(getOnlyDoctorsPatients(allHydratedPatients, req.query.doctor_id));
+      return;
+    }
+    res.status(200).send(allHydratedPatients);
   })
   .get('/:id', (req, res) => {
     const patient = Api.Patient.get(req.params.id);

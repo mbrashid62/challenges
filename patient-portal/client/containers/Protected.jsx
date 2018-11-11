@@ -12,7 +12,7 @@ export class Protected extends Component {
   static displayName = 'patient-portal/client/containers/Protected';
 
   static propTypes = {
-    children: PropTypes.array.isRequired,
+    children: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
     loggedInUser: PropTypes.object.isRequired,
     loginActions: PropTypes.object.isRequired,

@@ -5,10 +5,6 @@ import _ from 'lodash';
 
 import Protected from './Protected';
 import DoctorHome from './DoctorHome';
-import PatientHome from './PatientHome';
-
-// Todo: update conditional logic here...
-// const UserHome = ({ user }) => ;
 
 class UserHome extends React.Component {
   static displayName = 'patient-portal/client/containers/UserHome';
