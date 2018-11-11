@@ -1,24 +1,15 @@
 import React from 'react';
-import axios from 'axios';
 import Appointments from './Appointments';
 import PatientDetails from '../components/PatientDetails';
 import Files from '../components/Files';
 
+// Todo: connect to store to read this data
 import { patient, pendingAppts, pastAppts, files } from '../dummyData';
 
 class Patient extends React.Component {
-
   componentDidMount() {
-    console.log('props: ', this.props);
-    const { match } = this.props;
-    const id = match.params.id;
-    this.fetchPatientDatabyId(id);
+    console.log('patient compoent mounted');
   }
-
-  fetchPatientDataById = (patiendId = '') => {
-    axios.get('api/')
-  };
-
 
   render() {
     return (
