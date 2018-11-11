@@ -23,8 +23,12 @@ const mapStateToProps = ({ user }) => ({ user });
 
 Home.propTypes = {
   user: PropTypes.shape({
+    id: PropTypes.string,
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
+    email: PropTypes.string,
     role: PropTypes.string,
-  }),
+  }).isRequired,
 };
 
 export default connect(mapStateToProps)(Home);

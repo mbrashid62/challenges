@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { DateField } from 'react-date-picker';
+import axios from 'axios';
 import Button from 'material-ui/Button';
 import { withStyles } from 'material-ui/styles';
 
@@ -30,6 +32,32 @@ class NewApptRequest extends Component {
     };
   }
 
+  onSubmitRequest = (e) => {
+    e.preventDefault();
+
+    const { user } = this.props;
+    const { dateString } = this.state;
+
+    axios.create('api/appointments', {
+      params: {
+        user_id: user.id,
+        date_string: dateString,
+      },
+    })
+      .then((response) => {
+
+      })
+      .catch((error) => {
+
+      });
+  };
+
+  onDatePickBlur = (e) => {
+    this.setState({
+      dateString: e.target.value,
+    });
+  };
+
   render() {
     const { classes } = this.props;
     return (
@@ -37,16 +65,19 @@ class NewApptRequest extends Component {
         <div>
           <h2>Request an Appointment</h2>
         </div>
-        <form className={classes.form}>
+        <form className={classes.form} onSubmit={this.onSubmitRequest}>
           <div className={classes.formRow}>
             <div className={classes.dateLabel}>Date</div>
             <DateField
               dateFormat="YYYY-MM-DD hh:mm a"
+              onBlur={this.onDatePickBlur}
+              onExpandChange={this.onExpandChange}
             />
           </div>
           <Button
             variant="raised"
             color="primary"
+            disabled={this.state.dateString === ''}
           >
             Submit Request
           </Button>
@@ -59,6 +90,19 @@ class NewApptRequest extends Component {
 
 NewApptRequest.propTypes = {
   classes: PropTypes.object.isRequired,
+  user: PropTypes.shape({
+    id: PropTypes.string,
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
+    email: PropTypes.string,
+    role: PropTypes.string,
+  }).isRequired,
 };
 
-export default withStyles(styles)(NewApptRequest);
+const mapStateToProps = (state) => ({
+  user: state.user.user,
+});
+
+const mapDispatchToProps = () => ({});
+
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(NewApptRequest));
