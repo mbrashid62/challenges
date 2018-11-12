@@ -1,0 +1,935 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a39e9bdb-bf95-4acf-bef8-ca5837359f56" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/patient-portal/client/actions/patients.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/patient-portal/client/reducers/patients.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient-portal/client/components/PatientList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/patient-portal/client/components/PatientList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient-portal/client/containers/DoctorHome.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/patient-portal/client/containers/DoctorHome.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient-portal/client/containers/DoctorPatient.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/patient-portal/client/containers/Patient.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient-portal/client/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/patient-portal/client/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient-portal/client/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/patient-portal/client/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient-portal/server/api/patients.js" beforeDir="false" afterPath="$PROJECT_DIR$/patient-portal/server/api/patients.js" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-41315355">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="html" value="1" />
+          <entry key="js" value="42" />
+          <entry key="json" value="1" />
+          <entry key="jsx" value="41" />
+          <entry key="scss" value="2" />
+          <entry key="ts" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="HTML" value="1" />
+          <entry key="JSON" value="1" />
+          <entry key="JSX Harmony" value="41" />
+          <entry key="JavaScript" value="40" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="SCSS" value="2" />
+          <entry key="TypeScript" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts">
+        <counts>
+          <entry key="ESLintLanguageService" value="2" />
+          <entry key="TypeScriptServerServiceImpl" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="js" value="4467" />
+          <entry key="jsx" value="14669" />
+          <entry key="scss" value="37" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JSX Harmony" value="14669" />
+          <entry key="JavaScript" value="4452" />
+          <entry key="PLAIN_TEXT" value="15" />
+          <entry key="SCSS" value="37" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.501221">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/patient-portal/client/main.jsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="510">
+                  <caret line="50" column="2" lean-forward="true" selection-start-line="50" selection-start-column="2" selection-end-line="50" selection-end-column="2" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                    <element signature="e#489#517#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/patient-portal/client/containers/Patient.jsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="255">
+                  <caret line="17" selection-start-line="17" selection-end-line="17" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/patient-portal/client/containers/DoctorHome.jsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="397">
+                  <caret line="118" column="14" selection-start-line="118" selection-start-column="14" selection-end-line="118" selection-end-column="14" />
+                  <folding>
+                    <element signature="e#0#41#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/patient-portal/client/components/PatientList.jsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="416">
+                  <caret line="33" column="50" selection-start-line="33" selection-start-column="50" selection-end-line="33" selection-end-column="50" />
+                  <folding>
+                    <element signature="e#0#41#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/patient-portal/client/reducers/auth.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="385">
+                  <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/patient-portal/client/reducers/index.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="105">
+                  <caret line="11" selection-start-line="11" selection-end-line="11" />
+                  <folding>
+                    <element signature="e#0#40#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/patient-portal/client/containers/Protected.jsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="282">
+                  <caret line="45" selection-start-line="45" selection-end-line="45" />
+                  <folding>
+                    <element signature="e#0#41#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/patient-portal/server/api/patients.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="535">
+                  <caret line="66" column="25" lean-forward="true" selection-start-line="66" selection-start-column="25" selection-end-line="66" selection-end-column="25" />
+                  <folding>
+                    <element signature="e#0#33#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/patient-portal/server/server.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="420">
+                  <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                    <element signature="e#33#63#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/patient-portal/server/api/appointments.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="450">
+                  <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+                  <folding>
+                    <element signature="e#0#33#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>prim</find>
+      <find>classes</find>
+      <find>connect</find>
+      <find>api/ap`</find>
+      <find>axios</find>
+      <find>api/</find>
+      <find>DoctorsAppointment</find>
+      <find>displayN</find>
+      <find>styles</find>
+      <find>message to</find>
+      <find>message to</find>
+      <find>.shape</find>
+      <find>Docto</find>
+      <find>.DOCTOR</find>
+      <find>propT</find>
+      <find>REquest an A</find>
+      <find>dateS</find>
+      <find>user: Propty</find>
+      <find>axios.get</find>
+      <find>AXIOS.GET</find>
+      <find>patientId</find>
+      <find>`</find>
+      <find>docto</find>
+      <find>AUTH_STATE</find>
+      <find>bindAction</find>
+      <find>app.</find>
+      <find>console.log</find>
+      <find>debugger;</find>
+      <find>onPatientClick</find>
+      <find>// doctors p</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>history</replace>
+      <replace>PatientAppointments</replace>
+      <replace>PATIENTS_STATE</replace>
+      <replace>'</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/patient-portal/client/constants/api.js" />
+        <option value="$PROJECT_DIR$/patient-portal/client/store.jsx" />
+        <option value="$PROJECT_DIR$/patient-portal/client/actions/auth.js" />
+        <option value="$PROJECT_DIR$/patient-portal/client/reducers/auth.js" />
+        <option value="$PROJECT_DIR$/patient-portal/client/containers/Auth.jsx" />
+        <option value="$PROJECT_DIR$/patient-portal/client/components/Navbar.jsx" />
+        <option value="$PROJECT_DIR$/patient-portal/client/containers/Login.jsx" />
+        <option value="$PROJECT_DIR$/patient-portal/client/utils/dom.js" />
+        <option value="$PROJECT_DIR$/patient-portal/client/components/Appointment.jsx" />
+        <option value="$PROJECT_DIR$/patient-portal/client/components/DoctorsAppointment.jsx" />
+        <option value="$PROJECT_DIR$/patient-portal/client/components/PatientAppointments.jsx" />
+        <option value="$PROJECT_DIR$/patient-portal/client/components/appointments/styles/apptStyles.js" />
+        <option value="$PROJECT_DIR$/patient-portal/client/components/appointments/DoctorsAppointment.jsx" />
+        <option value="$PROJECT_DIR$/patient-portal/client/components/appointments/PatientAppointments.jsx" />
+        <option value="$PROJECT_DIR$/patient-portal/server/db/seed.js" />
+        <option value="$PROJECT_DIR$/patient-portal/server/db/models/appointment.js" />
+        <option value="$PROJECT_DIR$/patient-portal/client/constants/roles.js" />
+        <option value="$PROJECT_DIR$/patient-portal/client/containers/UserHome.jsx" />
+        <option value="$PROJECT_DIR$/patient-portal/client/containers/Appointments.jsx" />
+        <option value="$PROJECT_DIR$/patient-portal/assets/stylesheets/_body.scss" />
+        <option value="$PROJECT_DIR$/patient-portal/client/components/NewApptRequest.jsx" />
+        <option value="$PROJECT_DIR$/patient-portal/client/containers/Protected.jsx" />
+        <option value="$PROJECT_DIR$/patient-portal/client/reducers/index.js" />
+        <option value="$PROJECT_DIR$/patient-portal/client/reducers/patients.js" />
+        <option value="$PROJECT_DIR$/patient-portal/client/actions/patients.js" />
+        <option value="$PROJECT_DIR$/patient-portal/public/index.html" />
+        <option value="$PROJECT_DIR$/patient-portal/server/server.js" />
+        <option value="$PROJECT_DIR$/patient-portal/client/containers/DoctorPatient.jsx" />
+        <option value="$PROJECT_DIR$/patient-portal/client/containers/DoctorHome.jsx" />
+        <option value="$PROJECT_DIR$/patient-portal/client/components/PatientList.jsx" />
+        <option value="$PROJECT_DIR$/patient-portal/client/main.jsx" />
+        <option value="$PROJECT_DIR$/patient-portal/server/api/patients.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>false</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>false</other-services-enabled>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/patient-portal/node_modules" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/patient-portal/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1680" />
+    <option name="height" value="1027" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="challenges" type="b2602c69:ProjectViewProjectNode" />
+              <item name="challenges" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="challenges" type="b2602c69:ProjectViewProjectNode" />
+              <item name="challenges" type="462c0819:PsiDirectoryNode" />
+              <item name="patient-portal" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="challenges" type="b2602c69:ProjectViewProjectNode" />
+              <item name="challenges" type="462c0819:PsiDirectoryNode" />
+              <item name="patient-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="challenges" type="b2602c69:ProjectViewProjectNode" />
+              <item name="challenges" type="462c0819:PsiDirectoryNode" />
+              <item name="patient-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="challenges" type="b2602c69:ProjectViewProjectNode" />
+              <item name="challenges" type="462c0819:PsiDirectoryNode" />
+              <item name="patient-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="challenges" type="b2602c69:ProjectViewProjectNode" />
+              <item name="challenges" type="462c0819:PsiDirectoryNode" />
+              <item name="patient-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="actions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="challenges" type="b2602c69:ProjectViewProjectNode" />
+              <item name="challenges" type="462c0819:PsiDirectoryNode" />
+              <item name="patient-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="challenges" type="b2602c69:ProjectViewProjectNode" />
+              <item name="challenges" type="462c0819:PsiDirectoryNode" />
+              <item name="patient-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="containers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="challenges" type="b2602c69:ProjectViewProjectNode" />
+              <item name="challenges" type="462c0819:PsiDirectoryNode" />
+              <item name="patient-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="reducers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="challenges" type="b2602c69:ProjectViewProjectNode" />
+              <item name="challenges" type="462c0819:PsiDirectoryNode" />
+              <item name="patient-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="challenges" type="b2602c69:ProjectViewProjectNode" />
+              <item name="challenges" type="462c0819:PsiDirectoryNode" />
+              <item name="patient-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="bundle.js" type="620a8d5e:NestingTreeNode" />
+            </path>
+            <path>
+              <item name="challenges" type="b2602c69:ProjectViewProjectNode" />
+              <item name="challenges" type="462c0819:PsiDirectoryNode" />
+              <item name="patient-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="challenges" type="b2602c69:ProjectViewProjectNode" />
+              <item name="challenges" type="462c0819:PsiDirectoryNode" />
+              <item name="patient-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="challenges" type="b2602c69:ProjectViewProjectNode" />
+              <item name="challenges" type="462c0819:PsiDirectoryNode" />
+              <item name="patient-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/patient-portal/node_modules/eslint" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/patient-portal/client/components/appointments" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>$USER_HOME$/.subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a39e9bdb-bf95-4acf-bef8-ca5837359f56" name="Default Changelist" comment="" />
+      <created>1541873466804</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1541873466804</updated>
+      <workItem from="1541873468119" duration="19237000" />
+      <workItem from="1541960664030" duration="16862000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="36099000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25274727" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32941177" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32941177" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TypeScript" order="10" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.27700534" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="1" weight="0.24969475" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TypeScript" order="1" />
+      <window_info anchor="bottom" id="Terminal" order="2" weight="0.27700534" />
+      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="4" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="5" />
+      <window_info anchor="bottom" id="Message" order="6" />
+      <window_info anchor="bottom" id="Find" order="7" visible="true" weight="0.32941177" />
+      <window_info anchor="bottom" id="Run" order="8" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="12" />
+      <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="right" id="Commander" order="1" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/patient-portal/client/components/PatientList.jsx</url>
+          <line>11</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/patient-portal/server/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/node_modules/redux/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="83" column="16" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/client/constants/api.js" />
+    <entry file="file://$PROJECT_DIR$/patient-portal/public/bundle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="24276" column="8" selection-start-line="24276" selection-start-column="8" selection-end-line="24276" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/client/store.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#1#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/client/components/Navbar.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="39" column="8" lean-forward="true" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/client/components/Home.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/server/db/models/patient.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/server/db/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/node_modules/react-redux/es/utils/PropTypes.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/client/dummyData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/server/api/doctors.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/server/db/db-api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/server/db/db-constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/server/api/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/node_modules/material-ui/Button/Button.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/client/utils/dom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/node_modules/material-ui/TextField/TextField.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="40" column="14" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/node_modules/material-ui/Card/CardContent.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/server/db/seed.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="162" column="16" selection-start-line="162" selection-start-column="15" selection-end-line="162" selection-end-column="16" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/client/components/appointments/PatientAppointments.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="102" column="53" selection-start-line="102" selection-start-column="53" selection-end-line="102" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/server/db/models/appointment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/client/containers/UserHome.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="37" lean-forward="true" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/client/containers/Appointments.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/assets/stylesheets/_body.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="21" lean-forward="true" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/node_modules/react-date-picker/lib/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-593">
+          <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/client/constants/roles.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/client/components/appointments/styles/apptStyles.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/client/components/appointments/DoctorsAppointment.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="51" column="26" lean-forward="true" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/assets/stylesheets/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="17" lean-forward="true" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/client/containers/PatientHome.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/server/api/appointments.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/client/components/NewApptRequest.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="38" column="14" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/client/containers/Login.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1845">
+          <caret line="123" column="15" selection-start-line="123" selection-start-column="15" selection-end-line="123" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/client/actions/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="7" selection-end-line="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/client/reducers/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/client/reducers/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/client/containers/Protected.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/client/reducers/patients.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/client/actions/patients.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/server/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#33#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/client/containers/Patient.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/client/containers/DoctorHome.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="118" column="14" selection-start-line="118" selection-start-column="14" selection-end-line="118" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/client/components/PatientList.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="33" column="50" selection-start-line="33" selection-start-column="50" selection-end-line="33" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/client/main.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="50" column="2" lean-forward="true" selection-start-line="50" selection-start-column="2" selection-end-line="50" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#489#517#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient-portal/server/api/patients.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="66" column="25" lean-forward="true" selection-start-line="66" selection-start-column="25" selection-end-line="66" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -7,7 +7,6 @@ import Icon from 'material-ui/Icon';
 import Card from 'material-ui/Card';
 import { withStyles } from 'material-ui/styles';
 
-// import PatientsApi from '../../../patient-portal/server/api/patients';
 import PatientList from '../components/PatientList';
 
 const styles = {
@@ -57,7 +56,7 @@ class DoctorHome extends Component {
   };
 
   getPatientsById = (doctorId = '') => {
-    axios.get('api/patients', { 
+    axios.get('api/patients', {
       params: {
         doctor_id: doctorId,
       },
