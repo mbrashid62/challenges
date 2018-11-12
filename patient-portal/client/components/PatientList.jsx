@@ -51,7 +51,7 @@ export class PatientList extends Component {
       .then((response) => allPatientActions.dispatchSetActivePatient(response.data))
       .catch(() => {});
 
-    history.push(`/patients/${patient.user_id}`);
+    history.push(`/patient/${patient.user_id}`);
   };
 
   render() {
