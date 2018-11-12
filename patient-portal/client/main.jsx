@@ -21,7 +21,7 @@ import store from './store';
 import Login from './containers/Login';
 import UserHome from './containers/UserHome';
 import PatientHome from './containers/PatientHome';
-import Patient from './containers/DoctorPatient';
+import Patient from './containers/Patient';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
 import NewApptRequest from './components/NewApptRequest';

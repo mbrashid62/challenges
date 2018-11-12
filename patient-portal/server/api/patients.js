@@ -41,10 +41,25 @@ export default Router()
   .get('/', (req, res) => {
     const allPatients = Api.Patient.get();
     const allHydratedPatients = allPatients.map(hydratePatientData);
+
+    // doctor's patients
     if (req.query.doctor_id) {
       res.status(200).send(getOnlyDoctorsPatients(allHydratedPatients, req.query.doctor_id));
       return;
     }
+
+    // single patient
+    if (req.query.patient_id) {
+      let patient = Api.Patient.get(req.query.patient_id);
+      patient = {
+        ...patient,
+        user_id: req.query.patient_id,
+      };
+      res.status(200).send(hydratePatientData(patient));
+      return;
+    }
+
+    // all patients
     res.status(200).send(allHydratedPatients);
   })
   .get('/:id', (req, res) => {
