@@ -1,12 +1,12 @@
-#### Application Overview
+## Application Overview
 
-#### Doctors
+### Doctors
 After logging in, Doctors will be routed to the `<Dashboard />` component.
 An API call to fetch all of a doctor's patients is made. The results are inserted into the appiclation store and the patients are shown to the user.
 A user can click a patient which fires off an API call to fetch patient details. Once the application receives a valid response, the store gets updated with this data and the user gets routed to the patient page.
 On a patient page, a doctor can then select a pending appointment and choose to accept or decline the appointment. The appropriate HTTP requests are made on select.
 
-#### Patients
+### Patients
 Similarly, after logging in, Patients will be routed to the `<PatientHome />` component. They can view their pending appointments and choose to cancel them. They can also request a new appointment and send messages to their doctor. 
 
 ## Challenges Overview
