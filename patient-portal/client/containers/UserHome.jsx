@@ -25,7 +25,7 @@ UserHome.propTypes = {
     lastName: PropTypes.string,
     email: PropTypes.string,
     role: PropTypes.string,
-  }).isRequired,
+  }),
 };
 
 UserHome.displayName = 'patient-portal/client/containers/UserHome';

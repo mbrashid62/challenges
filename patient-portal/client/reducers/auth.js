@@ -1,6 +1,6 @@
 import { AUTH_ACTION_TYPES } from '../actions/auth';
 
-const API_STATUS = {
+export const API_STATUS = {
   IDLE: 'IDLE',
   PENDING: 'PENDING',
   SUCCESS: 'SUCCESS',

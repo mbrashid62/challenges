@@ -17,7 +17,7 @@ export class Protected extends Component {
       PropTypes.node,
     ]).isRequired,
     history: PropTypes.object.isRequired,
-    loggedInUser: PropTypes.object.isRequired,
+    loggedInUser: PropTypes.object,
   };
 
   componentDidMount() {
@@ -25,7 +25,6 @@ export class Protected extends Component {
 
     // if we have logged in active user, send them to the dashboard
     // otherwise, prompt them to login
-    debugger;
     if (!_.isEmpty(loggedInUser)) {
       this.sendToDashboard();
     } else {
