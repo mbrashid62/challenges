@@ -1,6 +1,6 @@
 import { AUTH_ACTION_TYPES } from '../actions/auth';
 
-const API_STATUS = {
+export const API_STATUS = {
   IDLE: 'IDLE',
   PENDING: 'PENDING',
   SUCCESS: 'SUCCESS',
@@ -36,7 +36,7 @@ const authReducer = (state = AUTH_STATE, action) => {
     case AUTH_ACTION_TYPES.SET_USER: {
       return {
         ...state,
-        user: action.payload,
+        user: action.payload.user,
       };
     }
     case AUTH_ACTION_TYPES.LOGOUT: {

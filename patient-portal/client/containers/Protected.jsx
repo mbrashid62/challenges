@@ -12,29 +12,33 @@ export class Protected extends Component {
   static displayName = 'patient-portal/client/containers/Protected';
 
   static propTypes = {
-    children: PropTypes.array.isRequired,
+    children: PropTypes.oneOfType([
+      PropTypes.array,
+      PropTypes.node,
+    ]).isRequired,
     history: PropTypes.object.isRequired,
-    loggedInUser: PropTypes.object.isRequired,
-    loginActions: PropTypes.object.isRequired,
+    loggedInUser: PropTypes.object,
   };
 
   componentDidMount() {
-    const userCookieData = this.getUserCookieData();
+    const { loggedInUser } = this.props;
 
-    if (!_.isEmpty(userCookieData)) {
-      this.props.loginActions.dispatchSetUser(userCookieData.user);
+    // if we have logged in active user, send them to the dashboard
+    // otherwise, prompt them to login
+    if (!_.isEmpty(loggedInUser)) {
       this.sendToDashboard();
+    } else {
+      this.sendToLogin();
     }
   }
 
   componentDidUpdate(prevProps) {
+    // on successful login, let's set our auth cookie and redirect to the dashboard
     if (_.isEmpty(prevProps.loggedInUser) && !_.isEmpty(this.props.loggedInUser)) {
       this.setUserCookie(this.props.loggedInUser);
       this.sendToDashboard();
     }
   }
-
-  getUserCookieData = () => Cookies.getJSON('_authCookie') || {};
 
   setUserCookie = (user) => {
     Cookies.set('_authCookie', {
@@ -43,6 +47,8 @@ export class Protected extends Component {
   };
 
   sendToDashboard = () => this.props.history.push('/dashboard');
+
+  sendToLogin = () => this.props.history.push('/login');
 
   render() {
     return (

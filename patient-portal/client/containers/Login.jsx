@@ -8,6 +8,7 @@ import TextField from 'material-ui/TextField';
 import { withStyles } from 'material-ui/styles';
 
 import * as authActions from '../actions/auth';
+import { API_STATUS } from '../reducers/auth';
 import Protected from './Protected';
 
 const styles = {
@@ -34,8 +35,16 @@ class Login extends Component {
       email: '',
       password: '',
       enableLogin: false,
+      promptMessage: 'Login Below',
     };
     this.onPasswordChange = this.onPasswordChange.bind(this);
+  }
+
+  componentDidUpdate(prevProps) {
+    const { loginStatus } = this.props;
+    if ((prevProps.loginStatus !== loginStatus) && (loginStatus === API_STATUS.FAILURE)) {
+      this.updatePromptMessage('Whoops try again!');
+    }
   }
 
   onPasswordChange(type, value) {
@@ -57,6 +66,9 @@ class Login extends Component {
     loginActions.dispatchLoginAttempt(this.state.email, this.state.password);
   };
 
+  updatePromptMessage = (txt) => this.setState({ promptMessage: txt });
+
+  // Todo: provide more robust email validation
   isValidEmail = (email = '') => email.includes('@');
 
   render() {
@@ -67,6 +79,7 @@ class Login extends Component {
           <div>
             <h2 className="login-header">Log in</h2>
           </div>
+          <span>{this.state.promptMessage}</span>
           <form className="login-form-wrapper">
             <div>
               <TextField
@@ -112,13 +125,18 @@ class Login extends Component {
   }
 }
 
+const mapStateToProps = (state) => ({
+  loginStatus: state.user.status,
+});
+
 const mapDispatchToProps = (dispatch) => ({
   loginActions: bindActionCreators(authActions, dispatch),
 });
 
 Login.propTypes = {
   loginActions: PropTypes.object,
+  loginStatus: PropTypes.string,
   classes: PropTypes.object.isRequired,
 };
 
-export default connect(() => ({}), mapDispatchToProps)(withRouter(withStyles(styles)(Login)));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(withStyles(styles)(Login)));
