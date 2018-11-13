@@ -40,13 +40,6 @@ export function dispatchLoginAttempt(email, password) {
   };
 }
 
-export function dispatchSetUser(user) {
-  return {
-    type: AUTH_ACTION_TYPES.SET_USER,
-    payload: user,
-  };
-}
-
 export function dispatchLogout() {
   return {
     type: AUTH_ACTION_TYPES.LOGOUT,

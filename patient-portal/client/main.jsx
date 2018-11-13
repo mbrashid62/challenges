@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import pink from 'material-ui/colors/pink';
 import blue from 'material-ui/colors/blue';
+import Cookies from 'js-cookie';
 
 const theme = createMuiTheme({
   typography: {
@@ -17,6 +18,7 @@ const theme = createMuiTheme({
 });
 
 import store from './store';
+import { AUTH_ACTION_TYPES } from './actions/auth';
 
 import Login from './containers/Login';
 import UserHome from './containers/UserHome';
@@ -28,6 +30,11 @@ import NewApptRequest from './components/NewApptRequest';
 
 // Load Global CSS
 import '../assets/stylesheets/style.scss';
+
+store.dispatch({
+  type: AUTH_ACTION_TYPES.SET_USER,
+  payload: Cookies.getJSON('_authCookie') || {},
+});
 
 render(
   <Provider store={store}>
