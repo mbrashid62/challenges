@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
-import axios from 'axios';
 import Paper from 'material-ui/Paper';
 import Divider from 'material-ui/Divider';
 import { withStyles } from 'material-ui/styles';
+import { fetchPatient } from '../../services/patient';
 
 import * as patientActions from '../actions/patients';
 
@@ -43,15 +43,12 @@ export class PatientList extends Component {
       allPatientActions,
     } = this.props;
 
-    axios.get('/api/patients', {
-      params: {
-        patient_id: patient.user_id,
-      },
-    })
-      .then((response) => allPatientActions.dispatchSetActivePatient(response.data))
-      .catch(() => {});
-
-    history.push(`/patient/${patient.user_id}`);
+    fetchPatient({ patient_id: patient.user_id })
+      .then((response) => {
+        // once we succesfully fetch a patient, let's update our store redirect to patient page
+        allPatientActions.dispatchSetActivePatient(response.data);
+        history.push(`/patient/${patient.user_id}`);
+      });
   };
 
   render() {

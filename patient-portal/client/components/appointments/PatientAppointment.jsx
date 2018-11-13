@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 
 import PropTypes from 'prop-types';
 import { Collapse } from 'react-collapse';
@@ -9,11 +8,12 @@ import Divider from 'material-ui/Divider';
 import TextField from 'material-ui/TextField';
 import { withStyles } from 'material-ui/styles';
 
-import { getIsChildOfParent } from '../../utils/dom';
+import { getIsChildOfElement } from '../../utils/dom';
+import { deleteAppointment } from '../../../services/appointment';
 
 import { styles } from './styles/apptStyles';
 
-class PatientAppointments extends Component {
+class PatientAppointment extends Component {
   static displayName = 'patient-portal/client/components/PatientAppointments';
 
   constructor(props) {
@@ -21,6 +21,7 @@ class PatientAppointments extends Component {
     this.state = {
       drawerOpen: false,
       message: '',
+      isRemoved: false,
     };
     this.toggleDrawer = this.toggleDrawer.bind(this);
     this.onMessageChange = this.onMessageChange.bind(this);
@@ -38,7 +39,7 @@ class PatientAppointments extends Component {
     const { appt } = this.props;
 
     // if our drawer is open and we have not clicked within the card, let's close it
-    if (this.state.drawerOpen && !getIsChildOfParent(document.getElementById(appt.datetime), e.target)) {
+    if (this.state.drawerOpen && !getIsChildOfElement(document.getElementById(appt.datetime), e.target)) {
       this.toggleDrawer();
     }
   };
@@ -54,17 +55,19 @@ class PatientAppointments extends Component {
   };
 
   handleCancelRequest = () => {
-    const { appt } = this.props;
-    const { message } = this.state;
+    const params = {
+      id: this.props.appt.id,
+      msg: this.state.message,
+    };
 
-    axios.delete('api/appointments', {
-      params: {
-        id: appt.id,
-        msg: message,
-      },
-    });
-
-    // Todo: update store with modified appt
+    deleteAppointment(params)
+      .then((response) => {
+        this.setState({
+          message: '',
+          isRemoved: true,
+        });
+        // Todo: update store with modified appt
+      });
     this.toggleDrawer();
   };
 
@@ -78,6 +81,10 @@ class PatientAppointments extends Component {
       classes,
     } = this.props;
 
+    if (this.state.isRemoved) {
+      return null;
+    }
+
     return (
       <Card id={appt.datetime} key={appt.datetime} className={classes.card} onClick={(e) => this.onCardClick(e, appt)}>
         <CardContent>
@@ -90,7 +97,7 @@ class PatientAppointments extends Component {
             </div>
           </div>
         </CardContent>
-        {appt.status === 'pending' ?
+        {appt.status === 'pending' && (
           <Collapse isOpened={this.state.drawerOpen}>
             <Divider />
             <CardContent>
@@ -115,14 +122,14 @@ class PatientAppointments extends Component {
                 </form>
               </div>
             </CardContent>
-          </Collapse> : null
-        }
+          </Collapse>
+        )}
       </Card>
     );
   }
 }
 
-PatientAppointments.propTypes = {
+PatientAppointment.propTypes = {
   appt: PropTypes.shape({
     id: PropTypes.number,
     status: PropTypes.string,
@@ -132,4 +139,4 @@ PatientAppointments.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(PatientAppointments);
+export default withStyles(styles)(PatientAppointment);

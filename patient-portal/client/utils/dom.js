@@ -1,4 +1,4 @@
-export function getIsChildOfParent(parent, child) {
+export function getIsChildOfElement(parent, child) {
   let node = child.parentNode;
   while (node != null) {
     if (node === parent) {
