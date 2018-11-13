@@ -2,9 +2,11 @@ const path = require('path');
 const webpack = require('webpack'); // eslint-disable-line no-unused-vars
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+require('babel-core/register');
+require('babel-polyfill');
 
 module.exports = {
-  entry: './client/main.jsx',
+  entry: ['babel-polyfill', './client/main.jsx'],
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',

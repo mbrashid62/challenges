@@ -29,7 +29,7 @@ class Patient extends React.Component {
     return (
       <div className="container">
         <h2>{activePatient.firstName} {activePatient.lastName}</h2>
-        <PatientDetails patient={patient} />
+        <PatientDetails patient={activePatient} />
         <div>
           <h3>Appointment Requests</h3>
           <Appointments appointments={pendingAppts} />

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 
 import PropTypes from 'prop-types';
 import { Collapse } from 'react-collapse';
@@ -9,7 +8,11 @@ import Divider from 'material-ui/Divider';
 import TextField from 'material-ui/TextField';
 import { withStyles } from 'material-ui/styles';
 
-import { getIsChildOfParent } from '../../utils/dom';
+import { getIsChildOfElement } from '../../utils/dom';
+import {
+  updateAppointment,
+  deleteAppointment,
+} from '../../../services/appointment';
 
 import { styles } from './styles/apptStyles';
 
@@ -21,6 +24,7 @@ class DoctorsAppointment extends Component {
     this.state = {
       drawerOpen: false,
       message: '',
+      isDeleted: false,
     };
     this.toggleDrawer = this.toggleDrawer.bind(this);
     this.onMessageChange = this.onMessageChange.bind(this);
@@ -38,7 +42,7 @@ class DoctorsAppointment extends Component {
     const { appt } = this.props;
 
     // if our drawer is open and we have not clicked within the card, let's close it
-    if (this.state.drawerOpen && !getIsChildOfParent(document.getElementById(appt.datetime), e.target)) {
+    if (this.state.drawerOpen && !getIsChildOfElement(document.getElementById(appt.datetime), e.target)) {
       this.toggleDrawer();
     }
   };
@@ -53,33 +57,32 @@ class DoctorsAppointment extends Component {
     }
   };
 
-  handleDecline = () => {
-    const { appt } = this.props;
-    const { message } = this.state;
+  onDecline = () => {
+    const params = {
+      id: this.props.appt.id,
+      msg: this.state.message,
+    };
 
-    axios.delete('api/appointments', {
-      params: {
-        id: appt.id,
-        msg: message,
-      },
-    });
+    deleteAppointment(params)
+      .then((response) => {
+        this.setState({ isDeleted: true });
+        // Todo: update store with modified appt
+      });
 
-    // Todo: update store with modified appt
     this.toggleDrawer();
   };
 
-  handleAccept = () => {
-    const { appt } = this.props;
-    const { message } = this.state;
+  onAccept = () => {
+    const params = {
+      id: this.props.appt.id,
+      msg: this.state.message,
+    };
 
-    axios.post('api/appointments', {
-      params: {
-        id: appt.id,
-        msg: message,
-      },
-    });
+    updateAppointment(params)
+      .then((response) => {
+        // Todo: update store with modified appt
+      });
 
-    // Todo: update store with modified appt
     this.toggleDrawer();
   };
 
@@ -93,6 +96,10 @@ class DoctorsAppointment extends Component {
       classes,
     } = this.props;
 
+    if (this.state.isDeleted) {
+      return null;
+    }
+
     return (
       <Card id={appt.datetime} key={appt.datetime} className={classes.card} onClick={(e) => this.onCardClick(e, appt)}>
         <CardContent>
@@ -105,7 +112,7 @@ class DoctorsAppointment extends Component {
             </div>
           </div>
         </CardContent>
-        {appt.status === 'pending' ?
+        {appt.status === 'pending' && (
           <Collapse isOpened={this.state.drawerOpen}>
             <Divider />
             <CardContent>
@@ -123,14 +130,14 @@ class DoctorsAppointment extends Component {
                     />
                   </div>
                   <div>
-                    <Button fullWidth onClick={this.handleDecline}>
+                    <Button fullWidth onClick={this.onDecline}>
                       Decline Request
                     </Button>
                   </div>
                   <Divider />
                   <div>
                     <Button
-                      onClick={this.handleAccept}
+                      onClick={this.onAccept}
                       variant="raised"
                       color="primary"
                       className={classes.action}
@@ -142,8 +149,8 @@ class DoctorsAppointment extends Component {
                 </form>
               </div>
             </CardContent>
-          </Collapse> : null
-        }
+          </Collapse>
+        )}
       </Card>
     );
   }

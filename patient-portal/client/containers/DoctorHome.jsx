@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import axios from 'axios';
 import TextField from 'material-ui/TextField';
 import Icon from 'material-ui/Icon';
 import Card from 'material-ui/Card';
 import { withStyles } from 'material-ui/styles';
 
 import PatientList from '../components/PatientList';
+import { fetchPatient } from '../../services/patient';
 
 const styles = {
   welcomeMessage: {
@@ -56,21 +56,8 @@ class DoctorHome extends Component {
   };
 
   getPatientsById = (doctorId = '') => {
-    axios.get('api/patients', {
-      params: {
-        doctor_id: doctorId,
-      },
-    })
-      .then((response) => {
-        this.setState({
-          patients: response.data,
-        });
-      })
-      .catch(() => {
-        this.setState({
-          patients: [],
-        });
-      });
+    fetchPatient({ doctor_id: doctorId })
+      .then((response) => this.setState({ patients: response.data }));
   };
   // This assumes a doctor's patient list is going to be relatively small at first.
   // That said, it is more efficient to perform filtering in the browser to avoid network hops.

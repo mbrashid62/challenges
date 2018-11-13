@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { DateField } from 'react-date-picker';
-import axios from 'axios';
 import Button from 'material-ui/Button';
 import { withStyles } from 'material-ui/styles';
 
+import { createAppointment } from '../../services/appointment';
 import 'react-date-picker/index.css';
 
 const styles = {
@@ -32,23 +33,17 @@ class NewApptRequest extends Component {
     };
   }
 
-  onSubmitRequest = (e) => {
+  onApptSubmitRequest = (e) => {
     e.preventDefault();
 
-    const { user } = this.props;
-    const { dateString } = this.state;
-
-    axios.create('api/appointments', {
-      params: {
-        user_id: user.id,
-        date_string: dateString,
-      },
+    createAppointment({
+      user_id: this.props.user.id,
+      date_string: this.state.dateString,
     })
       .then((response) => {
-
-      })
-      .catch((error) => {
-
+        // Todo: Update store based off of response
+        // Todo: show confirmation to user and back button
+        this.props.history.goBack();
       });
   };
 
@@ -65,7 +60,7 @@ class NewApptRequest extends Component {
         <div>
           <h2>Request an Appointment</h2>
         </div>
-        <form className={classes.form} onSubmit={this.onSubmitRequest}>
+        <form className={classes.form}>
           <div className={classes.formRow}>
             <div className={classes.dateLabel}>Date</div>
             <DateField
@@ -78,6 +73,7 @@ class NewApptRequest extends Component {
             variant="raised"
             color="primary"
             disabled={this.state.dateString === ''}
+            onClick={this.onApptSubmitRequest}
           >
             Submit Request
           </Button>
@@ -90,6 +86,7 @@ class NewApptRequest extends Component {
 
 NewApptRequest.propTypes = {
   classes: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired,
   user: PropTypes.shape({
     id: PropTypes.string,
     firstName: PropTypes.string,
@@ -105,4 +102,4 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = () => ({});
 
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(NewApptRequest));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(withStyles(styles)(NewApptRequest)));

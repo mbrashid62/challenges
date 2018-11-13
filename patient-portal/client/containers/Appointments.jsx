@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import DoctorsAppointment from '../components/appointments/DoctorsAppointment';
-import PatientAppointments from '../components/appointments/PatientAppointments';
+import PatientAppointments from '../components/appointments/PatientAppointment';
 
 import { USER_ROLES } from '../constants/roles';
 
